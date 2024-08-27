@@ -1,0 +1,27 @@
+.current-weather-card {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .current-weather-title {
+    font-size: 2em;
+    color: #cccccc;
+    font-weight: 700;
+  }
+  
+  .current-weather-list {
+    margin-top: 10px;
+  }
+  
+  .current-weather-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+  }
+  
+  .current-weather-icon {
+    margin-left: 10px;
+  }
+  
