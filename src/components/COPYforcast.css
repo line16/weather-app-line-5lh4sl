@@ -1,0 +1,31 @@
+.IonCaard {
+  --background: linear-gradient(to bottom, #e4f5fc 0%,#bfe8f9 34%,#9fd8ef 60%,#47bdf4 100%); 
+  color: #393838;
+  border-radius: 8px;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.2);
+
+}
+
+.ionItem {
+  --background: #a2ddf1b0;
+  border-radius: 13px;
+  margin: 10px;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.2);
+}
+
+.ionCardTitle{
+    margin: auto;
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+.iconCardSub{
+    font-size: 2em;
+    margin: auto;
+    padding-top: 2px;
+}
+
+.list-md{
+    background-color: #b9e1ee00;
+}
+ 

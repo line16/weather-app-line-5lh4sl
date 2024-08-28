@@ -1,27 +1,49 @@
+/* CSS for the CurrentWeather component */
 .current-weather-card {
-    margin: 20px;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-  }
+  background-color: #f0f8ff; /* Alice blue background */
+  color: #333; /* Dark text for readability */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 16px;
+  margin: auto; /* Center the card */
+}
+
+.current-weather-image {
+  width: 100%; /* Full width image */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Rounded corners for image */
+  margin-bottom: 16px; /* Space between image and header */
+}
+
+.current-weather-title {
+  font-size: 1.5em; /* Larger title text */
+  font-weight: bold;
+}
+
+.current-weather-city-name {
+  font-size: 1.2em; /* Slightly smaller subtitle text */
+  color: #555; /* Slightly lighter color for subtitle */
+}
+
+.current-weather-list {
+  margin-top: 16px; /* Space above list */
+}
+
+.current-weather-item {
+  border-bottom: 1px solid #ddd; /* Light border for item separation */
+  padding: 12px 0; /* Padding around each item */
+}
+
+.current-weather-item:last-child {
+  border-bottom: none; /* Remove border from the last item */
+}
+
+.current-weather-icon {
+  margin-left: 8px; 
+  color: #404243; 
+  font-size: 4em;
+}
+.currentDeg{
+  font-size: 2.3em;
   
-  .current-weather-title {
-    font-size: 2em;
-    color: #cccccc;
-    font-weight: 700;
-  }
-  
-  .current-weather-list {
-    margin-top: 10px;
-  }
-  
-  .current-weather-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 0;
-  }
-  
-  .current-weather-icon {
-    margin-left: 10px;
-  }
-  
+}
