@@ -1,49 +1,66 @@
-/* CSS for the CurrentWeather component */
 .current-weather-card {
-  background-color: #f0f8ff; /* Alice blue background */
-  color: #333; /* Dark text for readability */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  padding: 16px;
-  margin: auto; /* Center the card */
+  --background: linear-gradient(
+    to bottom,
+    #ecf5fa 0%,
+    #c7e9f8 34%,
+    #b1e0f2 60%,
+    #91d0ed 100%
+  );
+  color: #393838;
+  border-radius: 8px;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.2);
 }
 
 .current-weather-image {
-  width: 100%; /* Full width image */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 8px; /* Rounded corners for image */
-  margin-bottom: 16px; /* Space between image and header */
-}
-
-.current-weather-title {
-  font-size: 1.5em; /* Larger title text */
-  font-weight: bold;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 16px;
 }
 
 .current-weather-city-name {
-  font-size: 1.2em; /* Slightly smaller subtitle text */
-  color: #555; /* Slightly lighter color for subtitle */
+  margin: auto;
+  font-size: 2em;
+  font-weight: 600;
 }
 
 .current-weather-list {
-  margin-top: 16px; /* Space above list */
+  margin-top: 2px;
+  background-color: #555;
 }
 
 .current-weather-item {
-  border-bottom: 1px solid #ddd; /* Light border for item separation */
-  padding: 12px 0; /* Padding around each item */
+  --background: #a2ddf13d;
+  border-radius: 13px;
+  margin: 10px;
 }
-
-.current-weather-item:last-child {
-  border-bottom: none; /* Remove border from the last item */
+.current-weather-item-first{
+  --background: #dcdcdc3d;
+  border-radius: 13px;
+  margin: 10px;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.2);
 }
 
 .current-weather-icon {
-  margin-left: 8px; 
-  color: #404243; 
-  font-size: 4em;
+  margin-left: 8px;
+  color: #404243;
+  font-size: 5em;
 }
-.currentDeg{
-  font-size: 2.3em;
-  
+.currentDeg {
+  font-size: 3em;
+}
+
+.current-weather-wind-icon {
+  font-size: 1.2em;
+}
+
+.current-weather-item-info {
+  --background: #a2ddf13d;
+  border-radius: 13px;
+  margin: 10px;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.2);
+}
+
+h3{
+  font-size: 25px;
 }

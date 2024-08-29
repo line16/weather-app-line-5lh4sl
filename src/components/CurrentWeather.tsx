@@ -9,10 +9,17 @@ import {
   IonItem,
   IonLabel,
   IonIcon,
-  IonCardSubtitle
+  IonCardSubtitle,
 } from "@ionic/react";
-import { sunnyOutline, moonOutline, cloudOutline, rainyOutline, partlySunnyOutline } from "ionicons/icons";
-import './CurrentWeather.css'; // Import the CSS file
+import {
+  sunnyOutline,
+  moonOutline,
+  cloudOutline,
+  rainyOutline,
+  partlySunnyOutline,
+  arrowForwardOutline,
+} from "ionicons/icons";
+import "./CurrentWeather.css";
 
 interface Weather {
   id: number;
@@ -66,49 +73,63 @@ const CurrentWeather: React.FC = () => {
     "https://api.openweathermap.org/data/2.5/weather?zip=8500,dk&units=metric&appid=76799082ae1442b626cf882793217343"
   );
 
-  // Early return if data is not yet available
   if (!data || !data.main || !data.wind || !data.sys || !data.weather) {
     return <p>Loading...</p>;
   }
 
-  // Get the weather icon code and map it to IonIcon
   const iconCode = data.weather[0].icon;
   const weatherIcon = weatherIconMapping[iconCode] || cloudOutline; // Default to cloudOutline if icon not found
 
   return (
     <IonCard className="current-weather-card">
       <IonCardHeader>
-        <IonCardTitle className="current-weather-title">Current Weather</IonCardTitle>
-        <IonCardSubtitle className="current-weather-city-name">Vejret for {data.name}</IonCardSubtitle>
+        <IonCardTitle className="current-weather-city-name">
+          Todays weather in {data.name}
+        </IonCardTitle>
       </IonCardHeader>
 
       <IonCardContent>
         <IonList className="current-weather-list">
-          <IonItem className="current-weather-item">
-            <IonIcon icon={weatherIcon} className="current-weather-icon" slot="start" />
+          <IonItem className="current-weather-item-first">
+            <IonIcon
+              icon={weatherIcon}
+              className="current-weather-icon"
+              slot="start"
+            />
             <IonLabel>
-              <div className="currentDeg">{Math.round(data.main.temp)}&deg;C</div>
+              <div className="currentDeg">
+                {Math.round(data.main.temp)}&deg;C
+              </div>
               <div>Feels like: {Math.round(data.main.feels_like)}&deg;C</div>
-              <div>Min: {Math.round(data.main.temp_min)}&deg;C, Max: {Math.round(data.main.temp_max)}&deg;C</div>
+              <div>
+                Min: {Math.round(data.main.temp_min)}&deg;C, Max:{" "}
+                {Math.round(data.main.temp_max)}&deg;C
+              </div>
             </IonLabel>
           </IonItem>
+
           <IonItem className="current-weather-item">
-            <IonLabel>Vindhastighed:</IonLabel>
+            <IonLabel className="current-weather-label">
+              Vindhastighed:
+            </IonLabel>
             <div>{data.wind.speed} m/sek</div>
           </IonItem>
+
           <IonItem className="current-weather-item">
             <IonLabel>Vindretning:</IonLabel>
             <div style={{ display: "flex", alignItems: "center" }}>
               {data.wind.deg}°
               <IonIcon
-                icon="arrowForwardOutline"
-                className="current-weather-icon"
+                icon={arrowForwardOutline}
+                className="current-weather-wind-icon"
                 style={{
                   transform: `rotate(${data.wind.deg}deg)`,
+                  color: "#333",
                 }}
               />
             </div>
           </IonItem>
+
           <IonItem className="current-weather-item">
             <IonLabel>Solen står op:</IonLabel>
             <div>
@@ -118,6 +139,7 @@ const CurrentWeather: React.FC = () => {
               })}
             </div>
           </IonItem>
+
           <IonItem className="current-weather-item">
             <IonLabel>Solen går ned:</IonLabel>
             <div>

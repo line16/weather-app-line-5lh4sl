@@ -1,9 +1,14 @@
 .IonCaard {
-  --background: linear-gradient(to bottom, #e4f5fc 0%,#bfe8f9 34%,#9fd8ef 60%,#47bdf4 100%); 
+  --background: linear-gradient(
+    to bottom,
+    #ecf5fa 0%,
+    #c7e9f8 34%,
+    #b1e0f2 60%,
+    #91d0ed 100%
+  );
   color: #393838;
   border-radius: 8px;
   box-shadow: 0 4px 7px rgba(0, 0, 0, 0.2);
-
 }
 
 .ionItem {
@@ -13,19 +18,18 @@
   box-shadow: 0 4px 7px rgba(0, 0, 0, 0.2);
 }
 
-.ionCardTitle{
-    margin: auto;
-    font-size: 1.8em;
-    font-weight: 600;
+.ionCardTitle {
+  margin: auto;
+  font-size: 1.8em;
+  font-weight: 600;
 }
 
-.iconCardSub{
-    font-size: 2em;
-    margin: auto;
-    padding-top: 2px;
+.iconCardSub {
+  font-size: 2em;
+  margin: auto;
+  padding-top: 2px;
 }
 
-.list-md{
-    background-color: #b9e1ee00;
+.list-md {
+  background-color: #b9e1ee00;
 }
- 
