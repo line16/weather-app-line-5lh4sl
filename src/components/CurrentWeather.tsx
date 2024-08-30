@@ -56,16 +56,21 @@ interface CurrentWeather {
   sys: Sys;
 }
 
-// Mapping weather icons to IonIcon
 const weatherIconMapping: { [key: string]: any } = {
   "01d": sunnyOutline, // Clear sky day
   "01n": moonOutline, // Clear sky night
+
   "02d": partlySunnyOutline, // Few clouds day
   "02n": cloudOutline, // Few clouds night
-  "03d": rainyOutline, // Rainy day
-  "03n": rainyOutline, // Rainy night
+
+  "03d": partlySunnyOutline, // Scattered clouds day
+  "03n": cloudOutline, // Scattered clouds night
+
   "04d": cloudOutline, // Overcast day
   "04n": cloudOutline, // Overcast night
+
+  "05d": rainyOutline, // Rain day
+  "05n": rainyOutline, // Rain night
 };
 
 const CurrentWeather: React.FC = () => {
@@ -78,7 +83,7 @@ const CurrentWeather: React.FC = () => {
   }
 
   const iconCode = data.weather[0].icon;
-  const weatherIcon = weatherIconMapping[iconCode] || cloudOutline; // Default to cloudOutline if icon not found
+  const weatherIcon = weatherIconMapping[iconCode] || cloudOutline; // Default cloudOutline
 
   return (
     <IonCard className="current-weather-card">
@@ -106,6 +111,11 @@ const CurrentWeather: React.FC = () => {
                 {Math.round(data.main.temp_max)}&deg;C
               </div>
             </IonLabel>
+          </IonItem>
+
+          <IonItem className="current-weather-item">
+            <IonLabel className="current-weather-label">beskrivelse:</IonLabel>
+            <p>Weather: {data.weather[0].description}</p>
           </IonItem>
 
           <IonItem className="current-weather-item">

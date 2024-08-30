@@ -63,10 +63,18 @@ interface ForecastData {
 const weatherIconMapping: { [key: string]: string } = {
   "01d": sunnyOutline, // Clear sky day
   "01n": moonOutline, // Clear sky night
+
   "02d": partlySunnyOutline, // Few clouds day
   "02n": cloudOutline, // Few clouds night
-  "03d": rainyOutline, //rainy day
-  "03n": rainyOutline, //rainy night
+
+  "03d": partlySunnyOutline, // Scattered clouds day
+  "03n": cloudOutline, // Scattered clouds night
+
+  "04d": cloudOutline, // Overcast day
+  "04n": cloudOutline, // Overcast night
+
+  "05d": rainyOutline, // Rain day
+  "05n": rainyOutline, // Rain night
 };
 
 const WeatherForecast: React.FC = () => {
@@ -115,7 +123,7 @@ const WeatherForecast: React.FC = () => {
       <IonCardContent>
         <IonList>
           {dailyForecasts.map((day: any, index) => {
-            const iconCode = day.weather[0].icon.replace("n", "d"); // Force day-time icon
+            const iconCode = day.weather[0].icon.replace("n", "d"); // byt om på dag og nat iconer(hvorfor er default nat??)
 
             return (
               <IonItem key={index} className="ionItem">
